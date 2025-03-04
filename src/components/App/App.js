@@ -1,10 +1,8 @@
 import React, { useCallback, useState } from "react";
 
-import TrackList from "../TrackList/TrackList";
 import Playlist from "../Playlist/Playlist";
 import Spotify from "../../modules/Spotify";
 import SearchBar from "../SearchBar/SearchBar";
-import searchResults from "../SearchResult/SearchResults";
 import SearchResults from "../SearchResult/SearchResults";
 
 
