@@ -1,4 +1,5 @@
 import React, { useCallback, useState } from "react";
+import "./App.css";
 
 import Playlist from "../Playlist/Playlist";
 import Spotify from "../../modules/Spotify";
@@ -10,11 +11,7 @@ function App() {
     const [playlistName, setPlaylistName] = useState("New Playlist");
     const [playlistTracks, setPlaylistTracks] = useState([]);
 
-    const [searchResults, setSearchResults] = useState([
-        { id: 1, name: "Blinding Lights", artist: "The Weeknd", album: "After Hours", uri: "spotify:track:0VjIjW4GlUZAMYd2vXMi3b" },
-        { id: 2, name: "Levitating", artist: "Dua Lipa", album: "Future Nostalgia", uri: "spotify:track:39LLxExYz6ewLAcYrzQQyP" },
-        { id: 3, name: "Peaches", artist: "Justin Bieber", album: "Justice", uri: "spotify:track:4iJyoBOLtHqaGxP12qzhQI" },
-    ]);
+    const [searchResults, setSearchResults] = useState([]);
 
     const search = useCallback((term) => {
         console.log(term);
@@ -60,20 +57,18 @@ function App() {
             <h1>Jammming</h1>
 
             {/* Search Results */}
-            <div className="search-results">
+            <div className="App">
                 <SearchBar onSearch={search} />
-                <SearchResults searchResults={searchResults} onAdd={addTrack} />
-            </div>
-
-            {/* Playlist */}
-            <div className="playlist">
-                <Playlist
-                    playlistName={playlistName}
-                    tracks={playlistTracks}
-                    onNameChange={updatePlaylistName}
-                    onSave={savePlaylist}
-                    onRemove={removeTrack}
-                />
+                <div className="App-playlist">
+                    <SearchResults searchResults={searchResults} onAdd={addTrack} />
+                    <Playlist
+                        playlistName={playlistName}
+                        tracks={playlistTracks}
+                        onNameChange={updatePlaylistName}
+                        onSave={savePlaylist}
+                        onRemove={removeTrack}
+                    />
+                </div>
             </div>
         </div>
     );
