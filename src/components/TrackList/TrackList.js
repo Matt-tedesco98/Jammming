@@ -2,16 +2,16 @@ import React from "react";
 import Track from "../Track/Track";
 
 
-const TrackList = ({tracks = [], onAdd, isRemoval, onRemove = []}) => {
+const TrackList = (props) => {
     return (
         <div className="Track-list">
-            {tracks.map((track) => (
+            {props.tracks.map((track) => (
                 <Track
                     key={track.id}
                     track={track}
-                    onAdd={onAdd}
-                    onRemove ={onRemove}
-                    isRemoval={isRemoval}
+                    onAdd={props.onAdd}
+                    onRemove ={props.onRemove}
+                    isRemoval={props.isRemoval}
                 />
             ))}
         </div>

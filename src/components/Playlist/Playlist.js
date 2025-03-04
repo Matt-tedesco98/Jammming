@@ -42,7 +42,7 @@ const Playlist = ( {playlistName, tracks, onNameChange, onSave, onRemove} ) => {
                 ) : (
                     <h2 onClick={handleEditClick}>{playlistName || "Click to edit name"}</h2> )}
             <TrackList tracks={tracks} onRemove={onRemove} isRemoval={true}/>
-            <button onClick={onSave}>Save Playlist</button>
+            <button onClick={onSave}>Save Playlist to Spotify</button>
         </div>
     )
 }
